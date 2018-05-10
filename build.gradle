@@ -1,16 +1,23 @@
 apply plugin: 'java'
 apply plugin: "jacoco"
 
+jacoco {
+        toolVersion = "0.7.6.201602180812"
+        reportsDir = file("$buildDir/reports/jacoco")
+    }
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
 jar {
    from('src/main/foo/bar') {
    }
 }
-
 jacocoTestReport {
-    group = "Reporting"
     reports {
-        xml.enabled true
+        xml.enabled false
         csv.enabled false
-        html.destination "${buildDir}/reports/coverage"
+        html.destination file("${buildDir}/reports/coverage")
     }
 }
