@@ -9,8 +9,7 @@ public class HelloWorldTest {
         // test function name can be anything
         // @Test annotation makes it a test fuction
 
-        HelloWorld hw = new HelloWorld();
-        boolean ok = hw.holaMundo();
-        assertTrue("Hellow world failed", ok);
+        String str= "Junit is working fine";
+        assertEquals("Junit is working fine",str);
     }
 }
